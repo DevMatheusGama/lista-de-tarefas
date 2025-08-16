@@ -1,13 +1,13 @@
 import { useState } from "react";
 import React from 'react'
 import { FaCheck } from "react-icons/fa6";
-import styles from './ButtonFeito.module.css' // exemplo, caso use CSS module
+import styles from './ButtonChecked.module.css'
 
-function ButtonFeito() {
+function ButtonChecked() {
     const [checked, setChecked] = useState(false);
 
     function handleClick() {
-        setChecked(!checked); // alterna o estado
+        setChecked(!checked); 
     }
 
     return (
@@ -20,4 +20,4 @@ function ButtonFeito() {
     );
 }
 
-export default ButtonFeito;
+export default ButtonChecked;
