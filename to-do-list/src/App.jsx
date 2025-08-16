@@ -5,7 +5,8 @@ import List from './components/List/List'
 function App() {
 
   return (
-    <div className='Container'>
+    <div className='container'>
+      <h1>Lista de tarefas</h1>
       <AddList />
       <List />
     </div>

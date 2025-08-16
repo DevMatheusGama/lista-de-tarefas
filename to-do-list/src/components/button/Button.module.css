@@ -1,0 +1,19 @@
+.button {
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: none;
+    font-size: 20px;
+    color: black;
+    background: rgb(71, 248, 71);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.button:hover {
+    box-shadow: 6px 6px 20px -3px rgba(97, 230, 93, 0.89);
+}
