@@ -1,6 +1,5 @@
 'use client'
 
-import { FaGoogle, FaApple, FaFacebook } from "react-icons/fa";
 import { useRouter } from 'next/navigation'
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";

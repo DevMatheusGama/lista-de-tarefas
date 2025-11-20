@@ -13,11 +13,16 @@ type Props = {
 export default function ButaoDelete({ id, setTarefas }: Props) {
     async function deletarTarefa() {
         try {
-            const response = await axios.delete(`/api/todos/${id}`)
+            await axios.delete(`/api/todos/${id}`)
             setTarefas(prev => prev.filter(tarefa => tarefa.id !== id));
-        } catch (error: any) {
-            console.error(error);
-            alert(error.response?.data?.error || "Erro ao deletar");
+        } catch (error: unknown) {
+            if (axios.isAxiosError(error)) {
+                console.log(error.response?.data?.error || "Erro ao deletar");
+            } else {
+                alert("Erro inesperado");
+            }
+
+            console.error(error)
         }
     }
     return (

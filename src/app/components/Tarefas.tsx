@@ -13,14 +13,14 @@ type TarefasProps = {
 };
 
 export default function Tarefas({ tarefas, setTarefas }: TarefasProps) {
-    async function fetchTarefas() {
-        const response = await axios.get('/api/todos');
-        setTarefas(response.data);
-    }
-
     useEffect(() => {
+        async function fetchTarefas() {
+            const response = await axios.get('/api/todos');
+            setTarefas(response.data);
+        }
+
         fetchTarefas();
-    }, []);
+    }, [setTarefas]);
 
     return (
         <div>

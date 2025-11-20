@@ -3,7 +3,7 @@ import { authOptions } from "../../auth/[...nextauth]/route";
 import { NextResponse } from "next/server";
 import { prisma } from "@/app/lib/prisma";
 
-export async function PATCH(req: Request, { params }: any) {
+export async function PATCH(req: Request, { params }: {  params: { id: string }}) {
     const data = await req.json();
 
     const updated = await prisma.todo.update({

@@ -14,7 +14,7 @@ type TarefaType = {
     done: boolean;
 };
 
-function page() {
+function Page() {
     const [tarefas, setTarefas] = useState<TarefaType[]>([])
 
     async function addTarefa(title: string) {
@@ -59,4 +59,4 @@ function page() {
     )
 }
 
-export default page
+export default Page
