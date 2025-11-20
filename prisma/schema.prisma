@@ -1,7 +1,11 @@
-datasource db {}
-
 generator client {
-    provider = "prisma-client-js"
+    provider = "prisma-client"
+    output   = "../app/generated/prisma"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
 }
 
 model User {
@@ -15,7 +19,8 @@ model User {
 model Todo {
     id        Int      @id @default(autoincrement())
     title     String
-    done      Boolean  @default(false)   createdAt DateTime @default(now())
+    done      Boolean  @default(false)   
+    createdAt DateTime @default(now())
     userId    Int
 
     user User @relation(fields: [userId], references: [id])
