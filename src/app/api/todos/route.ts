@@ -1,9 +1,8 @@
 import { getServerSession } from "next-auth";
-import { authOptions } from "../auth/[...nextauth]/route";
 import { NextResponse } from "next/server";
 import { prisma } from "@/app/lib/prisma";
+import { authOptions } from "@/app/lib/auth";
 
-// GET - Listar tarefas do usuário logado
 export async function GET() {
     const session = await getServerSession(authOptions);
 
@@ -19,7 +18,6 @@ export async function GET() {
     return NextResponse.json(todos);
 }
 
-// POST - Criar tarefa para o usuário logado
 export async function POST(req: Request) {
     const session = await getServerSession(authOptions);
 
